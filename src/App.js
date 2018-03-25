@@ -1,6 +1,5 @@
 import React from 'react';
 import * as BooksAPI from './BooksAPI';
-import Book from './Book';
 import './App.css';
 
 class BooksApp extends React.Component {
@@ -17,6 +16,7 @@ class BooksApp extends React.Component {
 
   componentDidMount() {
     BooksAPI.getAll().then((books) => {
+      console.log(books)
       this.setState({ books })
     })
   }
