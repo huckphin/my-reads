@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render a BookAuthor 1`] = `
+<div
+  className="book-authors"
+>
+  Chuck Palahniuk
+</div>
+`;

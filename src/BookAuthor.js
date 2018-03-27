@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class BookAuthors extends Component {
+class BookAuthor extends Component {
     static propTypes = {
         authors: PropTypes.array.isRequired
     }
@@ -11,10 +11,10 @@ class BookAuthors extends Component {
 
         return (
             <div className="book-authors">
-                {{ authors }}
+                { authors }
             </div>
         )
     }
 }
 
-export default BookAuthors
+export default BookAuthor

@@ -10,7 +10,7 @@ class BookTitle extends Component {
         const { title } = this.props;
 
         return (
-            <div className="book-title">{{ title }}</div>
+            <div className="book-title">{ title }</div>
         );
     }
 }
