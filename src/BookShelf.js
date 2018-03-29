@@ -9,6 +9,7 @@ class BookShelf extends Component {
     };
 
     render () {
+        console.log(this.props);
         const { title, books } = this.props;
 
         return (
@@ -16,16 +17,16 @@ class BookShelf extends Component {
                 <h2 className="bookshelf-title">{ title }</h2>
                 <div className="bookshelf-books">
                     <ol className="books-grid">
-                        {books.length !== 0 && books.map((book) => {
-                            <li>
-                                <Book
-                                    width={ book.width }
-                                    height={ book.height }
-                                    backgroundImageURL={ book.backgroundImageURL }
-                                    title={ book.title }
-                                    authors={ book.authors } />
-                            </li>
-                        })}
+                        {books.length !== 0 && books.map((book => (
+                                <li>
+                                    <Book
+                                        width={ book.width }
+                                        height={ book.height }
+                                        backgroundImageURL={ book.backgroundImageURL }
+                                        title={ book.title }
+                                        authors={ book.authors } />
+                                </li>
+                        )))} 
                     </ol>
                 </div>
             </div>
