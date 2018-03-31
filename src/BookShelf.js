@@ -20,9 +20,7 @@ class BookShelf extends Component {
                                 <li key={ book.title }>
                                     <Book
                                         authors={ book.authors }
-                                        backgroundImageUrl={ book.backgroundImageUrl }
-                                        height={ book.height }
-                                        width={ book.width }
+                                        imageLinks={ book.imageLinks }
                                         title={ book.title }
                                         key={ book.title } />
                                 </li>

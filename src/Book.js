@@ -7,14 +7,12 @@ import PropType from 'prop-types';
 class Book extends Component {
     static propTypes = {
         authors: PropType.array.isRequired,
-        backgroundImageUrl: PropType.string.isRequired,
-        height: PropType.number.isRequired,
-        width: PropType.number.isRequired,
+        imageLinks: PropType.object.isRequired,
         title: PropType.string.isRequired
     }
 
     render() {
-        const { authors, backgroundImageUrl, height, width, title } = this.props;
+        const { authors, imageLinks, title } = this.props;
 
         return (
             <div className="book">
@@ -22,9 +20,7 @@ class Book extends Component {
                     <div
                         className="book-cover"
                         style={{
-                            width: width, 
-                            height: height,
-                            backgroundImage: `url(${backgroundImageUrl})` }}>
+                            backgroundImage: `url(${imageLinks.smallThumbnail})` }}>
                     </div>
                     <BookShelfChanger />
                 </div>
