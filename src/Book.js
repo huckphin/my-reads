@@ -1,34 +1,35 @@
 import React, { Component } from 'react';
-import BookShelfChanger from './BookShelfChanger';
-import BookCover from './BookCover';
-import BookTitle from './BookTitle';
 import BookAuthor from './BookAuthor';
+import BookTitle from './BookTitle';
+import BookShelfChanger from './BookShelfChanger';
 import PropType from 'prop-types';
 
 class Book extends Component {
     static propTypes = {
+        authors: PropType.array.isRequired,
+        backgroundImageUrl: PropType.string.isRequired,
         height: PropType.number.isRequired,
         width: PropType.number.isRequired,
-        backgroundImageURL: PropType.string.isRequired,
-        title: PropType.string.isRequired,
-        authors: PropType.array.isRequired
+        title: PropType.string.isRequired
     }
 
     render() {
-        const { height, width, backgroundImageURL, title, authors } = this.props;
+        const { authors, backgroundImageUrl, height, width, title } = this.props;
 
         return (
             <div className="book">
                 <div className="book-top">
-                    <BookCover
-                        height={ height }
-                        width={ width }
-                        backgroundImageURL={ backgroundImageURL }
-                    />
+                    <div
+                        className="book-cover"
+                        style={{
+                            width: width, 
+                            height: height,
+                            backgroundImage: `url(${backgroundImageUrl})` }}>
+                    </div>
                     <BookShelfChanger />
                 </div>
-                <BookTitle title={ title } />
                 <BookAuthor authors={ authors } />
+                <BookTitle title={ title } />
             </div>
         );
     };

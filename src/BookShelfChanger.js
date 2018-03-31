@@ -14,6 +14,6 @@ class BookShelfChanger extends Component {
             </div>
         )
     }
-}
+};
 
-export default BookShelfChanger
+export default BookShelfChanger;

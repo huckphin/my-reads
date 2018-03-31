@@ -12,7 +12,13 @@ class BookCover extends Component {
         const { height, width, backgroundImageURL } = this.props;
 
         return (
-            <div className="book-cover" style={{ width: width, height: height, backgroundImage: `url(${backgroundImageURL})` }}>
+            <div
+                className="book-cover"
+                style={{
+                    width: width,
+                    height: height,
+                    backgroundImage: `url(${backgroundImageURL})` 
+                }}>
             </div>
         );
     }
