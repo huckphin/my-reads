@@ -3,7 +3,17 @@ import PropTypes from 'prop-types';
 import BookShelf from './BookShelf';
 
 class ListBooks extends Component {
+    static propTypes = {
+        books: PropTypes.array.isRequired
+    }
+
     render () {
+        const { books } = this.props;
+
+        const currentlyReading = books.filter((book) => book.shelf === 'currentlyReading');
+        const read = books.filter((book) => book.shelf === 'read');
+        const wantToRead = books.filter((book) => book.shelf === 'wantToRead');
+
         return (
             <div className="list-books">
                 <div className="list-books-title">
@@ -14,24 +24,7 @@ class ListBooks extends Component {
                         <BookShelf
                             title="Currently Reading"
                             key="Currently Reading"
-                            books={[
-                                {
-                                    authors: [ "Harper Lee" ],
-                                    backgroundImageUrl: "http://books.google.com/books/content?id=PGR2AwAAQBAJ&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE73-GnPVEyb7MOCxDzOYF1PTQRuf6nCss9LMNOSWBpxBrz8Pm2_mFtWMMg_Y1dx92HT7cUoQBeSWjs3oEztBVhUeDFQX6-tWlWz1-feexS0mlJPjotcwFqAg6hBYDXuK_bkyHD-y&source=gbs_api",
-                                    height: 193,
-                                    width: 128,
-                                    title: "To Kill a Mockingbird",
-                                    key: "To Kill a Mockingbird"
-                                },
-                                {
-                                    authors: [ "Orson Scott Card" ],
-                                    backgroundImageUrl: "http://books.google.com/books/content?id=yDtCuFHXbAYC&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE72RRiTR6U5OUg3IY_LpHTL2NztVWAuZYNFE8dUuC0VlYabeyegLzpAnDPeWxE6RHi0C2ehrR9Gv20LH2dtjpbcUcs8YnH5VCCAH0Y2ICaKOTvrZTCObQbsfp4UbDqQyGISCZfGN&source=gbs_api",
-                                    height: 188,
-                                    width: 128,
-                                    title: "Ender's Game",
-                                    key: "Ender's Game"
-                                }
-                            ]}
+                            books={currentlyReading}
                         />
                         <BookShelf
                             title="Want to Read"
