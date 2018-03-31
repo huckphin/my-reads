@@ -17,7 +17,7 @@ class BookCover extends Component {
                 style={{
                     width: width,
                     height: height,
-                    backgroundImage: `url(${backgroundImageURL})` 
+                    backgroundImage: `url(${backgroundImageURL})`
                 }}>
             </div>
         );

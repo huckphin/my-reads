@@ -23,7 +23,7 @@ class BookShelf extends Component {
                                         backgroundImageUrl={ book.backgroundImageUrl }
                                         height={ book.height }
                                         width={ book.width }
-                                        title={ book.title } 
+                                        title={ book.title }
                                         key={ book.title } />
                                 </li>
                         )))} 
