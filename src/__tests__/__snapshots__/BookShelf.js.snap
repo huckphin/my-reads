@@ -27,6 +27,8 @@ exports[`render a BookShelf 1`] = `
               style={
                 Object {
                   "backgroundImage": "url(http://books.google.com/books/content?id=nggnmAEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api)",
+                  "height": 188,
+                  "width": 192,
                 }
               }
             />

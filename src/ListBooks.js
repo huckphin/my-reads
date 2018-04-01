@@ -31,59 +31,12 @@ class ListBooks extends Component {
                         <BookShelf
                             title="Want to Read"
                             key="Want to Read"
-                            books={[
-                                {
-                                    authors: [ "David McCullugh" ],
-                                    imageLinks: {
-                                        smallThumbnail: "http://books.google.com/books/content?id=nggnmAEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
-                                        thumbnail: "http://books.google.com/books/content?id=nggnmAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-                                    },
-                                    title: "1776",
-                                    key: "1776"
-                                },
-                                {
-                                    authors: [ "J.K. Rowling" ],
-                                    imageLinks: {
-                                        smallThumbnail: "http://books.google.com/books/content?id=nggnmAEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
-                                        thumbnail: "http://books.google.com/books/content?id=nggnmAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-                                    },
-                                    title: "Harry Potter and the Sorcerer's Stone",
-                                    key: "Harry Potter and the Sorcerer's Stone"
-                                }
-                            ]}
+                            books={wantToRead}
                         />
                         <BookShelf
                             title="Read"
                             key="Read"
-                            books={[
-                                {
-                                    authors: [ "J.R.R. Tolkien" ],
-                                    imageLinks: {
-                                        smallThumbnail: "http://books.google.com/books/content?id=nggnmAEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
-                                        thumbnail: "http://books.google.com/books/content?id=nggnmAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-                                    },
-                                    title: "The Hobbit",
-                                    key: "The Hobbit"
-                                },
-                                {
-                                    authors: [ "Seuss" ],
-                                    imageLinks: {
-                                        smallThumbnail: "http://books.google.com/books/content?id=nggnmAEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
-                                        thumbnail: "http://books.google.com/books/content?id=nggnmAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-                                    },
-                                    title: "Oh, the Places You'll Go!",
-                                    key: "Oh, the Places You'll Go!"
-                                },
-                                {
-                                    authors: [ "Mark Twain" ],
-                                    imageLinks: {
-                                        smallThumbnail: "http://books.google.com/books/content?id=nggnmAEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
-                                        thumbnail: "http://books.google.com/books/content?id=nggnmAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-                                    },
-                                    title: "The Adventures of Tom Sawyer",
-                                    key: "The Adventures of Tom Sawyer"
-                                }
-                            ]}
+                            books={read}
                         />
                     </div>
                 </div> {/* list-books-content */}
