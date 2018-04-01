@@ -7,11 +7,11 @@ class BookAuthor extends Component {
     }
 
     render () {
-        const { authors } = this.props;
+        const authors = this.props.authors.join(', ');
 
         return (
             <div className="book-authors">
-                { authors }
+                {authors}
             </div>
         )
     }
