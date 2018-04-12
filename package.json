@@ -2,6 +2,7 @@
   "name": "my-reads",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://huckphin.github.io/my-reads",
   "dependencies": {
     "babel-preset-es2015": "^6.24.1",
     "image-size": "^0.6.2",
