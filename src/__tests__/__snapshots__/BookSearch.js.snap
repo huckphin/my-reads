@@ -9,16 +9,19 @@ exports[`will render BookSearch 1`] = `
   >
     <a
       className="close-search"
+      href="/"
       onClick={[Function]}
     >
-      Close
+      Close Search
     </a>
     <div
       className="search-books-input-wrapper"
     >
       <input
+        onChange={[Function]}
         placeholder="Search by title or author"
         type="text"
+        value=""
       />
     </div>
   </div>

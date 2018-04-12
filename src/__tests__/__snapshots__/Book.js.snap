@@ -21,10 +21,10 @@ exports[`will render a Book 1`] = `
       className="book-shelf-changer"
     >
       <select
+        defaultValue="move-to"
         onChange={[Function]}
       >
         <option
-          selected="selected"
           value="move-to"
         >
           Move to...
