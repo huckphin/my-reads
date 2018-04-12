@@ -16,34 +16,26 @@ class ListBooks extends Component {
         const wantToRead = books.filter((book) => book.shelf === 'wantToRead');
 
         return (
-            <div className="list-books">
-                <div className="list-books-title">
-                    <h1>MyReads</h1>
-                </div>
-                <div className="list-books-content">
-                    <div>
-                        <BookShelf
-                            title="Currently Reading"
-                            key="Currently Reading"
-                            books={currentlyReading}
-                            onUpdateBook={onUpdateBook}
-                        />
-                        <BookShelf
-                            title="Want to Read"
-                            key="Want to Read"
-                            books={wantToRead}
-                            onUpdateBook={onUpdateBook}
-                        />
-                        <BookShelf
-                            title="Read"
-                            key="Read"
-                            books={read}
-                            onUpdateBook={onUpdateBook}
-                        />
-                    </div>
-                </div> {/* list-books-content */}
-                <div className="open-search">
-                    <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
+            <div className="list-books-content">
+                <div>
+                    <BookShelf
+                        title="Currently Reading"
+                        key="Currently Reading"
+                        books={currentlyReading}
+                        onUpdateBook={onUpdateBook}
+                    />
+                    <BookShelf
+                        title="Want to Read"
+                        key="Want to Read"
+                        books={wantToRead}
+                        onUpdateBook={onUpdateBook}
+                    />
+                    <BookShelf
+                        title="Read"
+                        key="Read"
+                        books={read}
+                        onUpdateBook={onUpdateBook}
+                    />
                 </div>
             </div>
         )

@@ -2,78 +2,57 @@
 
 exports[`will render ListBooks 1`] = `
 <div
-  className="list-books"
+  className="list-books-content"
 >
-  <div
-    className="list-books-title"
-  >
-    <h1>
-      MyReads
-    </h1>
-  </div>
-  <div
-    className="list-books-content"
-  >
-    <div>
-      <div
-        className="bookshelf"
+  <div>
+    <div
+      className="bookshelf"
+    >
+      <h2
+        className="bookshelf-title"
       >
-        <h2
-          className="bookshelf-title"
-        >
-          Currently Reading
-        </h2>
-        <div
-          className="bookshelf-books"
-        >
-          <ol
-            className="books-grid"
-          />
-        </div>
-      </div>
+        Currently Reading
+      </h2>
       <div
-        className="bookshelf"
+        className="bookshelf-books"
       >
-        <h2
-          className="bookshelf-title"
-        >
-          Want to Read
-        </h2>
-        <div
-          className="bookshelf-books"
-        >
-          <ol
-            className="books-grid"
-          />
-        </div>
-      </div>
-      <div
-        className="bookshelf"
-      >
-        <h2
-          className="bookshelf-title"
-        >
-          Read
-        </h2>
-        <div
-          className="bookshelf-books"
-        >
-          <ol
-            className="books-grid"
-          />
-        </div>
+        <ol
+          className="books-grid"
+        />
       </div>
     </div>
-  </div>
-   
-  <div
-    className="open-search"
-  >
-    <a
-      onClick={[Function]}
+    <div
+      className="bookshelf"
     >
-      Add a book
-    </a>
+      <h2
+        className="bookshelf-title"
+      >
+        Want to Read
+      </h2>
+      <div
+        className="bookshelf-books"
+      >
+        <ol
+          className="books-grid"
+        />
+      </div>
+    </div>
+    <div
+      className="bookshelf"
+    >
+      <h2
+        className="bookshelf-title"
+      >
+        Read
+      </h2>
+      <div
+        className="bookshelf-books"
+      >
+        <ol
+          className="books-grid"
+        />
+      </div>
+    </div>
   </div>
 </div>
 `;
