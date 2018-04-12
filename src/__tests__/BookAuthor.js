@@ -10,3 +10,12 @@ test('render a BookAuthor', () => {
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 });
+
+test('render a BookAuthor with no authors', () => {
+    const component = renderer.create(
+        <BookAuthor />
+    );
+
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+})

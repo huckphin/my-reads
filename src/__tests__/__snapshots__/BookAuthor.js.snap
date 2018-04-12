@@ -7,3 +7,11 @@ exports[`render a BookAuthor 1`] = `
   Chuck Palahniuk
 </div>
 `;
+
+exports[`render a BookAuthor with no authors 1`] = `
+<div
+  className="book-authors"
+>
+  Unknown autor
+</div>
+`;

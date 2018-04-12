@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 class BookAuthor extends Component {
-    static propTypes = {
-        authors: PropTypes.array.isRequired
-    }
-
     render () {
-        const authors = this.props.authors.join(', ');
+        const authors = this.props.authors !== undefined ? this.props.authors.join(', ') : 'Unknown autor';
 
         return (
             <div className="book-authors">
