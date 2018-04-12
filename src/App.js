@@ -50,7 +50,7 @@ class BooksApp extends React.Component {
             </div>
           </div>
         )} />
-        <Route path="/search" render={() => (
+        <Route path="/search" render={({ history }) => (
           <BookSearch />
         )} />
       </div>
