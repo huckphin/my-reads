@@ -6559,10 +6559,6 @@ send@0.16.2:
     range-parser "~1.2.0"
     statuses "~1.4.0"
 
-serialize-form@^1.1.4:
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/serialize-form/-/serialize-form-1.1.4.tgz#e81944fca889a2286b6044afa2651de97967e9ca"
-
 serve-index@^1.7.2:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/serve-index/-/serve-index-1.9.1.tgz#d3768d69b1e7d82e5ce050fff5b453bea12a9239"
