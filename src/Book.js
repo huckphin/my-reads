@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
 import BookAuthor from './BookAuthor';
 import BookTitle from './BookTitle';
-import BookShelfChanger from './BookShelfChanger';
 import PropType from 'prop-types';
+import BookShelfChanger from './BookShelfChanger';
 
 class Book extends Component {
     static propTypes = {
         authors: PropType.array.isRequired,
+        book: PropType.object.isRequired,
+        id: PropType.string.isRequired,
         imageLinks: PropType.object.isRequired,
+        onUpdateBook: PropType.func.isRequired,
         title: PropType.string.isRequired
-    }
+    };
 
     render() {
-        const { authors, imageLinks, title } = this.props;
+        const { authors, book, id, imageLinks, onUpdateBook, title } = this.props;
 
         return (
             <div className="book">
@@ -24,7 +27,11 @@ class Book extends Component {
                             width: 192,
                             backgroundImage: `url(${imageLinks.smallThumbnail})` }}>
                     </div>
-                    <BookShelfChanger />
+                    <BookShelfChanger
+                        book={ book }
+                        onUpdateBook={ onUpdateBook }
+                        key={ id }
+                    />
                 </div>
                 <BookAuthor authors={ authors } />
                 <BookTitle title={ title } />

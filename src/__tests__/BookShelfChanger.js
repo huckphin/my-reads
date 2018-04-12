@@ -3,8 +3,18 @@ import BookShelfChanger from '../BookShelfChanger';
 import renderer from 'react-test-renderer';
 
 test('will render a BookShelfChanger', () => {
+    const onUpdateBook = jest.fn();
+    const book = {};
+    const id = "book-id";
+    const shelf = "read";
+
     const component = renderer.create(
-        <BookShelfChanger />
+        <BookShelfChanger 
+            book={ book }
+            id={ id }
+            shelf={ shelf }
+            onUpdateBook={ onUpdateBook }
+        />
     );
 
     let tree = component.toJSON();

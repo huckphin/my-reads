@@ -4,10 +4,12 @@ exports[`will render a BookShelfChanger 1`] = `
 <div
   className="book-shelf-changer"
 >
-  <select>
+  <select
+    onChange={[Function]}
+  >
     <option
-      disabled={true}
-      value="none"
+      selected="selected"
+      value="move-to"
     >
       Move to...
     </option>

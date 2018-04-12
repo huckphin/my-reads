@@ -3,6 +3,8 @@ import ListBooks from '../ListBooks';
 import renderer from 'react-test-renderer';
 
 test('will render ListBooks', () => {
+    const onUpdateBook = jest.fn();
+
     const component = renderer.create(
         <ListBooks
             key="MyReads"
@@ -18,9 +20,11 @@ test('will render ListBooks', () => {
                     shelf: "Currently Reading"
                 }
             ]}
+            onUpdateBook={ onUpdateBook }
         />
     );
 
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 });
+

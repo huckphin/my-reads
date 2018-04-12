@@ -4,11 +4,12 @@ import BookShelf from './BookShelf';
 
 class ListBooks extends Component {
     static propTypes = {
-        books: PropTypes.array.isRequired
+        books: PropTypes.array.isRequired,
+        onUpdateBook: PropTypes.func.isRequired
     }
 
     render () {
-        const { books } = this.props;
+        const { books, onUpdateBook } = this.props;
 
         const currentlyReading = books.filter((book) => book.shelf === 'currentlyReading');
         const read = books.filter((book) => book.shelf === 'read');
@@ -25,16 +26,19 @@ class ListBooks extends Component {
                             title="Currently Reading"
                             key="Currently Reading"
                             books={currentlyReading}
+                            onUpdateBook={onUpdateBook}
                         />
                         <BookShelf
                             title="Want to Read"
                             key="Want to Read"
                             books={wantToRead}
+                            onUpdateBook={onUpdateBook}
                         />
                         <BookShelf
                             title="Read"
                             key="Read"
                             books={read}
+                            onUpdateBook={onUpdateBook}
                         />
                     </div>
                 </div> {/* list-books-content */}

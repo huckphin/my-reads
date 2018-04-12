@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class BookShelfChanger extends Component {
+    static propTypes = {
+        book: PropTypes.object.isRequired,
+        onUpdateBook: PropTypes.func.isRequired
+    }
+
     render () {
+        const { book, onUpdateBook } = this.props;
+
         return (
             <div className="book-shelf-changer">
-                <select>
-                    <option value="none" disabled>Move to...</option>
+                <select onChange={(event) => onUpdateBook(book, event.target.value)}>
+                    <option value="move-to" selected="selected">Move to...</option>
                     <option value="currentlyReading">Currently Reading</option>
                     <option value="wantToRead">Want to Read</option>
                     <option value="read">Read</option>

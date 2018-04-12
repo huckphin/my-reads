@@ -15,4 +15,3 @@ it('renders without crashing', () => {
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
-

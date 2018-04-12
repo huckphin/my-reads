@@ -4,12 +4,13 @@ import Book from './Book';
 
 class BookShelf extends Component {
     static propTypes = {
-        title: PropTypes.string.isRequired,
-        books: PropTypes.array.isRequired
+        books: PropTypes.array.isRequired,
+        onUpdateBook: PropTypes.func.isRequired,
+        title: PropTypes.string.isRequired
     };
 
     render () {
-        const { title, books } = this.props;
+        const { books, onUpdateBook, title } = this.props;
 
         return (
             <div className="bookshelf">
@@ -20,9 +21,13 @@ class BookShelf extends Component {
                                 <li key={ book.title }>
                                     <Book
                                         authors={ book.authors }
+                                        book={ book }
+                                        key={ book.title }
+                                        id={ book.id }
                                         imageLinks={ book.imageLinks }
+                                        onUpdateBook={ onUpdateBook }
                                         title={ book.title }
-                                        key={ book.title } />
+                                        />
                                 </li>
                         )))} 
                     </ol>
