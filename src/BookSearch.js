@@ -1,29 +1,41 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import * as BooksAPI from './BooksAPI';
+import Book from './Book';
 
 class BookSearch extends Component {
+    static propTypes = {
+        onUpdateBook: PropTypes.func.isRequired
+    }
 
     state = {
-        books: [],
-        query: ''
+        booksFound: [],
+        query: '',
+        queryError: ''
     }
 
     searchBooks = (e) => {
         const query = e.target.value.trim();
         this.setState({ query: query });
 
-        if (query) {
+        if (BooksAPI.validSearchTermsToLowerCase.indexOf(query.toLowerCase()) !== -1) {
             BooksAPI.search(query).then((books) => {
+                if ("error" in books) {
+                    this.setState({ queryError: books.error, booksFound: [] });
+                }
                 if (books.length > 0) {
-                    this.setState({ books: books });
+                    this.setState({ booksFound: books, queryError: '' });
                 }
             })
+        } else {
+            this.setState({ queryError: `invalid search term`, booksFound: [] });
         }
     }
 
     render () {
-        const { books, query } = this.state;
+        const { booksFound, query, queryError } = this.state;
+        const { onUpdateBook } = this.props;
 
         return (
             <div className="search-books">
@@ -34,7 +46,31 @@ class BookSearch extends Component {
                     </div>
                 </div>
                 <div className="search-books-results">
-                    <ol className="books-grid"></ol>
+                    {queryError && (
+                        <div>
+                            <h3>Error querying for books: {queryError}</h3>
+                        </div>
+                    )}
+                    {booksFound.length > 0 && (
+                        <div>
+                            <h3>Now showing {booksFound.length} new books</h3>
+                        </div>
+                    )}
+                    <ol className="books-grid">
+                        {booksFound.map((book) => (
+                            <li key={book.id}>
+                                <Book
+                                    authors={ book.authors }
+                                    book={ book }
+                                    key={ book.title }
+                                    id={ book.id }
+                                    imageLinks={ book.imageLinks }
+                                    onUpdateBook={ onUpdateBook }
+                                    title={ book.title }
+                                />
+                            </li>
+                        ))}
+                    </ol>
                 </div>
             </div>
         )

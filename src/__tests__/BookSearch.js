@@ -4,9 +4,11 @@ import renderer from 'react-test-renderer';
 import { BrowserRouter } from 'react-router-dom';
 
 test('will render BookSearch', () => {
+    const onUpdateBook = jest.fn();
+
     const component = renderer.create(
         <BrowserRouter>
-        <BookSearch />
+        <BookSearch onUpdateBook={ onUpdateBook } />
         </BrowserRouter>
     );
 

@@ -28,6 +28,7 @@ exports[`will render BookSearch 1`] = `
   <div
     className="search-books-results"
   >
+    
     <ol
       className="books-grid"
     />
