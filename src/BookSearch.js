@@ -35,11 +35,16 @@ class BookSearch extends Component {
         const { books, onUpdateBook } = this.props;
 
         const booksFormatted = booksFound.map((bookFound) => {
+            let bookIsOnShelf = false;
             for (const book of books) {
                 if (book.id === bookFound.id) {
+                    bookIsOnShelf = true;
                     bookFound.shelf = book.shelf;
                     break;
                 }
+            }
+            if (bookIsOnShelf === false) {
+                bookFound.shelf = "none";
             }
             return bookFound;
         })
