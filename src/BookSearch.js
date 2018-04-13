@@ -16,21 +16,17 @@ class BookSearch extends Component {
     }
 
     searchBooks = (e) => {
-        const query = e.target.value.trim();
+        const query = e.target.value;
         this.setState({ query: query });
 
-        if (BooksAPI.validSearchTermsToLowerCase.indexOf(query.toLowerCase()) !== -1) {
-            BooksAPI.search(query).then((books) => {
-                if ("error" in books) {
-                    this.setState({ queryError: books.error, booksFound: [] });
-                }
-                if (books.length > 0) {
-                    this.setState({ booksFound: books, queryError: '' });
-                }
-            })
-        } else {
-            this.setState({ queryError: `invalid search term`, booksFound: [] });
-        }
+        BooksAPI.search(query).then((books) => {
+            if ("error" in books) {
+                this.setState({ queryError: books.error, booksFound: [] });
+            }
+            if (books.length > 0) {
+                this.setState({ booksFound: books, queryError: '' });
+            }
+        })
     }
 
     render () {
