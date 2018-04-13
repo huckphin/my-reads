@@ -9,7 +9,6 @@ class Book extends Component {
         authors: PropType.array.isRequired,
         book: PropType.object.isRequired,
         id: PropType.string.isRequired,
-        imageLinks: PropType.object.isRequired,
         onUpdateBook: PropType.func.isRequired,
         title: PropType.string.isRequired
     };
@@ -25,7 +24,7 @@ class Book extends Component {
                         style={{
                             height: 188,
                             width: 192,
-                            backgroundImage: `url(${imageLinks.smallThumbnail})` }}>
+                            backgroundImage: `url(${imageLinks ? imageLinks.smallThumbnail : null})` }}>
                     </div>
                     <BookShelfChanger
                         book={ book }

@@ -26,3 +26,24 @@ test('will render a Book', () => {
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
+
+test('will render a Book with no imageLinks', () => {
+  const onUpdateBook = jest.fn();
+  const book = {};
+  const id = "book-id";
+
+  const component = renderer.create(
+      <Book
+          authors={ [ "William E. Shotts, Jr." ] }
+          book={ book }
+          id={ id }
+          key={ id }
+          onUpdateBook={ onUpdateBook }
+          shelf="Want to Read"
+          title="The Linux Command Line"
+      />
+  );
+
+  let tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
