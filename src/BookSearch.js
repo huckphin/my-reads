@@ -6,6 +6,7 @@ import Book from './Book';
 
 class BookSearch extends Component {
     static propTypes = {
+        books: PropTypes.array.isRequired,
         onUpdateBook: PropTypes.func.isRequired
     }
 
@@ -31,7 +32,17 @@ class BookSearch extends Component {
 
     render () {
         const { booksFound, query, queryError } = this.state;
-        const { onUpdateBook } = this.props;
+        const { books, onUpdateBook } = this.props;
+
+        const booksFormatted = booksFound.map((bookFound) => {
+            for (const book of books) {
+                if (book.id === bookFound.id) {
+                    bookFound.shelf = book.shelf;
+                    break;
+                }
+            }
+            return bookFound;
+        })
 
         return (
             <div className="search-books">
@@ -53,7 +64,7 @@ class BookSearch extends Component {
                         </div>
                     )}
                     <ol className="books-grid">
-                        {booksFound.map((book) => (
+                        {booksFormatted.map((book) => (
                             <li key={book.id}>
                                 <Book
                                     book={ book }

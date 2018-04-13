@@ -5,10 +5,13 @@ import { BrowserRouter } from 'react-router-dom';
 
 test('will render BookSearch', () => {
     const onUpdateBook = jest.fn();
+    const books = [];
 
     const component = renderer.create(
         <BrowserRouter>
-        <BookSearch onUpdateBook={ onUpdateBook } />
+        <BookSearch
+            books={ books }
+            onUpdateBook={ onUpdateBook } />
         </BrowserRouter>
     );
 
