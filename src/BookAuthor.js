@@ -1,15 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class BookAuthor extends Component {
-    render () {
-        const authors = this.props.authors !== undefined ? this.props.authors.join(', ') : 'Unknown author';
-
-        return (
-            <div className="book-authors">
-                {authors}
-            </div>
-        )
-    }
+function BookAuthor(props) {
+    return (
+        <div className="book-authors">
+            {props.authors !== undefined ? props.authors.join(', ') : 'Unknown author'}
+        </div>
+    );
 }
 
-export default BookAuthor
+export default BookAuthor;
