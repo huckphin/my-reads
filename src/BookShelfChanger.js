@@ -12,8 +12,8 @@ class BookShelfChanger extends Component {
 
         return (
             <div className="book-shelf-changer">
-                <select onChange={(event) => onUpdateBook(book, event.target.value)} defaultValue="move-to">
-                    <option value="move-to">Move to...</option>
+                <select onChange={(event) => onUpdateBook(book, event.target.value)} defaultValue={ book.shelf }>
+                    <option value="move-to" disabled>Move to...</option>
                     <option value="currentlyReading">Currently Reading</option>
                     <option value="wantToRead">Want to Read</option>
                     <option value="read">Read</option>
