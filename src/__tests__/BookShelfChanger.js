@@ -11,8 +11,6 @@ test('will render a BookShelfChanger', () => {
     const component = renderer.create(
         <BookShelfChanger 
             book={ book }
-            id={ id }
-            shelf={ shelf }
             onUpdateBook={ onUpdateBook }
         />
     );

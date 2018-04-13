@@ -11,7 +11,7 @@ exports[`will render a Book 1`] = `
       className="book-cover"
       style={
         Object {
-          "backgroundImage": "url(http://books.google.com/books/content?id=nggnmAEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api)",
+          "backgroundImage": "url(null)",
           "height": 188,
           "width": 192,
         }
@@ -21,10 +21,11 @@ exports[`will render a Book 1`] = `
       className="book-shelf-changer"
     >
       <select
-        defaultValue="move-to"
+        defaultValue={undefined}
         onChange={[Function]}
       >
         <option
+          disabled={true}
           value="move-to"
         >
           Move to...
@@ -55,12 +56,12 @@ exports[`will render a Book 1`] = `
   <div
     className="book-authors"
   >
-    William E. Shotts, Jr.
+    Unknown author
   </div>
   <div
     className="book-title"
   >
-    The Linux Command Line
+    Fight Club
   </div>
 </div>
 `;
@@ -86,10 +87,11 @@ exports[`will render a Book with no imageLinks 1`] = `
       className="book-shelf-changer"
     >
       <select
-        defaultValue="move-to"
+        defaultValue={undefined}
         onChange={[Function]}
       >
         <option
+          disabled={true}
           value="move-to"
         >
           Move to...
@@ -120,12 +122,12 @@ exports[`will render a Book with no imageLinks 1`] = `
   <div
     className="book-authors"
   >
-    William E. Shotts, Jr.
+    Unknown author
   </div>
   <div
     className="book-title"
   >
-    The Linux Command Line
+    Fight Club
   </div>
 </div>
 `;

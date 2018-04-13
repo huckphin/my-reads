@@ -12,6 +12,6 @@ exports[`render a BookAuthor with no authors 1`] = `
 <div
   className="book-authors"
 >
-  Unknown autor
+  Unknown author
 </div>
 `;

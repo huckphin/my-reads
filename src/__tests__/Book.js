@@ -4,18 +4,14 @@ import renderer from 'react-test-renderer';
 
 test('will render a Book', () => {
   const onUpdateBook = jest.fn();
-  const book = {};
+  const book = {"title": "Fight Club"};
   const id = "book-id";
 
   const component = renderer.create(
-      <Book
-          authors={ [ "William E. Shotts, Jr." ] }
+    <Book
           book={ book }
-          id={ id }
           key={ id }
           onUpdateBook={ onUpdateBook }
-          shelf="Want to Read"
-          title="The Linux Command Line"
           imageLinks={{
             smallThumbnail: "http://books.google.com/books/content?id=nggnmAEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
             thumbnail: "http://books.google.com/books/content?id=nggnmAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
@@ -29,18 +25,14 @@ test('will render a Book', () => {
 
 test('will render a Book with no imageLinks', () => {
   const onUpdateBook = jest.fn();
-  const book = {};
+  const book = {"title": "Fight Club"};
   const id = "book-id";
 
   const component = renderer.create(
       <Book
-          authors={ [ "William E. Shotts, Jr." ] }
           book={ book }
-          id={ id }
           key={ id }
           onUpdateBook={ onUpdateBook }
-          shelf="Want to Read"
-          title="The Linux Command Line"
       />
   );
 

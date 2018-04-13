@@ -6,15 +6,12 @@ import BookShelfChanger from './BookShelfChanger';
 
 class Book extends Component {
     static propTypes = {
-        authors: PropType.array.isRequired,
         book: PropType.object.isRequired,
-        id: PropType.string.isRequired,
-        onUpdateBook: PropType.func.isRequired,
-        title: PropType.string.isRequired
+        onUpdateBook: PropType.func.isRequired
     };
 
     render() {
-        const { authors, book, id, imageLinks, onUpdateBook, title } = this.props;
+        const { book, onUpdateBook } = this.props;
 
         return (
             <div className="book">
@@ -24,16 +21,16 @@ class Book extends Component {
                         style={{
                             height: 188,
                             width: 192,
-                            backgroundImage: `url(${imageLinks ? imageLinks.smallThumbnail : null})` }}>
+                            backgroundImage: `url(${book.imageLinks ? book.imageLinks.smallThumbnail : null})` }}>
                     </div>
                     <BookShelfChanger
                         book={ book }
                         onUpdateBook={ onUpdateBook }
-                        key={ id }
+                        key={ book.id }
                     />
                 </div>
-                <BookAuthor authors={ authors } />
-                <BookTitle title={ title } />
+                <BookAuthor authors={ book.authors } />
+                <BookTitle title={ book.title } />
             </div>
         );
     };

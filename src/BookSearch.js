@@ -60,13 +60,9 @@ class BookSearch extends Component {
                         {booksFound.map((book) => (
                             <li key={book.id}>
                                 <Book
-                                    authors={ book.authors }
                                     book={ book }
                                     key={ book.title }
-                                    id={ book.id }
-                                    imageLinks={ book.imageLinks }
                                     onUpdateBook={ onUpdateBook }
-                                    title={ book.title }
                                 />
                             </li>
                         ))}

@@ -9,7 +9,6 @@ test('render a BookShelf', () => {
 
     const component = renderer.create(
         <BookShelf
-            title="Currently Reading"
             key="Currently Reading"
             onUpdateBook={ onUpdateBook }
             books={[
