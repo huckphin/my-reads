@@ -1,18 +1,7 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 
-class BookTitle extends Component {
-    static propTypes = {
-        title: PropTypes.string.isRequired
-    }
-
-    render () {
-        const { title } = this.props;
-
-        return (
-            <div className="book-title">{ title }</div>
-        );
-    }
+function BookTitle(props) {
+    return <div className="book-title">{ props.title }</div>;
 }
 
 export default BookTitle;
