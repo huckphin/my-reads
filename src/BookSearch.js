@@ -20,14 +20,16 @@ class BookSearch extends Component {
         const query = e.target.value;
         this.setState({ query: query });
 
-        BooksAPI.search(query).then((books) => {
-            if ("error" in books) {
-                this.setState({ queryError: books.error, booksFound: [] });
-            }
-            if (books.length > 0) {
-                this.setState({ booksFound: books, queryError: '' });
-            }
-        })
+        if (query.length !== 0) {
+            BooksAPI.search(query).then((books) => {
+                if ("error" in books) {
+                    this.setState({ queryError: books.error, booksFound: [] });
+                }
+                if (books.length > 0) {
+                    this.setState({ booksFound: books, queryError: '' });
+                }
+            })
+        }
     }
 
     render () {
